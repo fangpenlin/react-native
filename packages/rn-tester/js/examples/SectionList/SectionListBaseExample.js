@@ -69,6 +69,7 @@ type Props = $ReadOnly<{
   onTest?: ?() => void,
   testLabel?: ?string,
   testOutput?: ?string,
+  renderSectionFooter?: ?boolean,
   children?: ?React.Node,
 }>;
 
@@ -104,9 +105,14 @@ const SectionListBaseExample: component(
         renderItem={Item}
         /* $FlowFixMe[prop-missing] Error revealed after improved builtin React
          * utility types */
-        renderSectionHeader={({section: {title}}) => (
+        renderSectionHeader={!(renderSectionFooter ?? false) ? ({section: {title}}) => (
           <Text style={styles.header}>{title}</Text>
-        )}
+        ) : undefined}
+        /* $FlowFixMe[prop-missing] Error revealed after improved builtin React
+         * utility types */
+        renderSectionFooter={(renderSectionFooter ?? false) ? ({section: {title}}) => (
+          <Text style={styles.header}>{title}</Text>
+        ) : undefined}
         {...props.exampleProps}
       />
     </View>
