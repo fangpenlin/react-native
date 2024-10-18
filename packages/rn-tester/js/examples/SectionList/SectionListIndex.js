@@ -22,6 +22,7 @@ import onViewableItemsChanged_noWaitForInteraction from './SectionList-onViewabl
 import onViewableItemsChanged_offScreen_noWaitForInteraction from './SectionList-onViewableItemsChanged-offScreen-noWaitForInteraction';
 import onViewableItemsChanged_waitForInteraction from './SectionList-onViewableItemsChanged-waitForInteraction';
 import stickyHeadersEnabled from './SectionList-stickyHeadersEnabled';
+import invertedStickyHeadersEnabled from './SectionList-inverted-stickyHeadersEnabled';
 import withSeparators from './SectionList-withSeparators';
 
 exports.title = 'SectionList';
@@ -35,6 +36,7 @@ exports.examples = [
   onViewableItemsChanged,
   withSeparators,
   stickyHeadersEnabled,
+  invertedStickyHeadersEnabled,
   inverted,
   Scrollable,
   onViewableItemsChanged_noWaitForInteraction,
