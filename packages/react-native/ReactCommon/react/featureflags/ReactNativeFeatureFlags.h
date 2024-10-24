@@ -4,7 +4,7 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * @generated SignedSource<<c5a4993e3c7093f221cce2c891d86905>>
+ * @generated SignedSource<<64ea086a7c847e822595983867cdf776>>
  */
 
 /**
@@ -50,14 +50,14 @@ class ReactNativeFeatureFlags {
   RN_EXPORT static bool allowRecursiveCommitsWithSynchronousMountOnAndroid();
 
   /**
-   * When enabled, the RuntimeScheduler processing the event loop will batch all rendering updates and dispatch them together at the end of each iteration of the loop.
-   */
-  RN_EXPORT static bool batchRenderingUpdatesInEventLoop();
-
-  /**
    * Do not wait for a main-thread dispatch to complete init to start executing work on the JS thread on Android
    */
   RN_EXPORT static bool completeReactInstanceCreationOnBgThreadOnAndroid();
+
+  /**
+   * The bridgeless architecture enables the event loop by default. This feature flag allows us to force disabling it in specific instances.
+   */
+  RN_EXPORT static bool disableEventLoopOnBridgeless();
 
   /**
    * Kill-switch to turn off support for aling-items:baseline on Fabric iOS.
@@ -135,9 +135,9 @@ class ReactNativeFeatureFlags {
   RN_EXPORT static bool enableLongTaskAPI();
 
   /**
-   * Enables the use of microtasks in Hermes (scheduling) and RuntimeScheduler (execution).
+   * Use BackgroundDrawable and BorderDrawable instead of CSSBackgroundDrawable
    */
-  RN_EXPORT static bool enableMicrotasks();
+  RN_EXPORT static bool enableNewBackgroundAndBorderDrawables();
 
   /**
    * Moves execution of pre-mount items to outside the choregrapher in the main thread, so we can estimate idle time more precisely (Android only).
@@ -180,11 +180,6 @@ class ReactNativeFeatureFlags {
   RN_EXPORT static bool excludeYogaFromRawProps();
 
   /**
-   * Start image fetching during view preallocation instead of waiting for layout pass
-   */
-  RN_EXPORT static bool fetchImagesInViewPreallocation();
-
-  /**
    * Uses the default event priority instead of the discreet event priority by default when dispatching events from Fabric to React.
    */
   RN_EXPORT static bool fixMappingOfEventPrioritiesBetweenFabricAndReact();
@@ -225,11 +220,6 @@ class ReactNativeFeatureFlags {
   RN_EXPORT static bool loadVectorDrawablesOnImages();
 
   /**
-   * Removes nested calls to MountItemDispatcher.dispatchMountItems on Android, so we do less work per frame on the UI thread.
-   */
-  RN_EXPORT static bool removeNestedCallsToDispatchMountItemsOnAndroid();
-
-  /**
    * Propagate layout direction to Android views.
    */
   RN_EXPORT static bool setAndroidLayoutDirection();
@@ -248,11 +238,6 @@ class ReactNativeFeatureFlags {
    * Invoke callbacks immediately on the ReactInstance rather than going through a background thread for synchronization
    */
   RN_EXPORT static bool useImmediateExecutorInAndroidBridgeless();
-
-  /**
-   * When enabled, it uses the modern fork of RuntimeScheduler that allows scheduling tasks with priorities from any thread.
-   */
-  RN_EXPORT static bool useModernRuntimeScheduler();
 
   /**
    * When enabled, the native view configs are used in bridgeless mode.

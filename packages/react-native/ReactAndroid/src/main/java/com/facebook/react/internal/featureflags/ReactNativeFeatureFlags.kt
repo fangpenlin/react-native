@@ -4,7 +4,7 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * @generated SignedSource<<e568acc70be10bdd8f86caddd03cde05>>
+ * @generated SignedSource<<6eb9ba14445c1ce6b54a690941171485>>
  */
 
 /**
@@ -41,16 +41,16 @@ public object ReactNativeFeatureFlags {
   public fun allowRecursiveCommitsWithSynchronousMountOnAndroid(): Boolean = accessor.allowRecursiveCommitsWithSynchronousMountOnAndroid()
 
   /**
-   * When enabled, the RuntimeScheduler processing the event loop will batch all rendering updates and dispatch them together at the end of each iteration of the loop.
-   */
-  @JvmStatic
-  public fun batchRenderingUpdatesInEventLoop(): Boolean = accessor.batchRenderingUpdatesInEventLoop()
-
-  /**
    * Do not wait for a main-thread dispatch to complete init to start executing work on the JS thread on Android
    */
   @JvmStatic
   public fun completeReactInstanceCreationOnBgThreadOnAndroid(): Boolean = accessor.completeReactInstanceCreationOnBgThreadOnAndroid()
+
+  /**
+   * The bridgeless architecture enables the event loop by default. This feature flag allows us to force disabling it in specific instances.
+   */
+  @JvmStatic
+  public fun disableEventLoopOnBridgeless(): Boolean = accessor.disableEventLoopOnBridgeless()
 
   /**
    * Kill-switch to turn off support for aling-items:baseline on Fabric iOS.
@@ -143,10 +143,10 @@ public object ReactNativeFeatureFlags {
   public fun enableLongTaskAPI(): Boolean = accessor.enableLongTaskAPI()
 
   /**
-   * Enables the use of microtasks in Hermes (scheduling) and RuntimeScheduler (execution).
+   * Use BackgroundDrawable and BorderDrawable instead of CSSBackgroundDrawable
    */
   @JvmStatic
-  public fun enableMicrotasks(): Boolean = accessor.enableMicrotasks()
+  public fun enableNewBackgroundAndBorderDrawables(): Boolean = accessor.enableNewBackgroundAndBorderDrawables()
 
   /**
    * Moves execution of pre-mount items to outside the choregrapher in the main thread, so we can estimate idle time more precisely (Android only).
@@ -197,12 +197,6 @@ public object ReactNativeFeatureFlags {
   public fun excludeYogaFromRawProps(): Boolean = accessor.excludeYogaFromRawProps()
 
   /**
-   * Start image fetching during view preallocation instead of waiting for layout pass
-   */
-  @JvmStatic
-  public fun fetchImagesInViewPreallocation(): Boolean = accessor.fetchImagesInViewPreallocation()
-
-  /**
    * Uses the default event priority instead of the discreet event priority by default when dispatching events from Fabric to React.
    */
   @JvmStatic
@@ -251,12 +245,6 @@ public object ReactNativeFeatureFlags {
   public fun loadVectorDrawablesOnImages(): Boolean = accessor.loadVectorDrawablesOnImages()
 
   /**
-   * Removes nested calls to MountItemDispatcher.dispatchMountItems on Android, so we do less work per frame on the UI thread.
-   */
-  @JvmStatic
-  public fun removeNestedCallsToDispatchMountItemsOnAndroid(): Boolean = accessor.removeNestedCallsToDispatchMountItemsOnAndroid()
-
-  /**
    * Propagate layout direction to Android views.
    */
   @JvmStatic
@@ -279,12 +267,6 @@ public object ReactNativeFeatureFlags {
    */
   @JvmStatic
   public fun useImmediateExecutorInAndroidBridgeless(): Boolean = accessor.useImmediateExecutorInAndroidBridgeless()
-
-  /**
-   * When enabled, it uses the modern fork of RuntimeScheduler that allows scheduling tasks with priorities from any thread.
-   */
-  @JvmStatic
-  public fun useModernRuntimeScheduler(): Boolean = accessor.useModernRuntimeScheduler()
 
   /**
    * When enabled, the native view configs are used in bridgeless mode.

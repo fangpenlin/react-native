@@ -4,7 +4,7 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * @generated SignedSource<<83fc6efe6c6c5c52ffe081b9696919e1>>
+ * @generated SignedSource<<00421354f8b4b982f5eac771592d418f>>
  */
 
 /**
@@ -37,11 +37,15 @@ class NativeReactNativeFeatureFlags
 
   bool commonTestFlag(jsi::Runtime& runtime);
 
+  bool commonTestFlagWithoutNativeImplementation(jsi::Runtime& runtime);
+
   bool allowRecursiveCommitsWithSynchronousMountOnAndroid(jsi::Runtime& runtime);
 
   bool batchRenderingUpdatesInEventLoop(jsi::Runtime& runtime);
 
   bool completeReactInstanceCreationOnBgThreadOnAndroid(jsi::Runtime& runtime);
+
+  bool disableEventLoopOnBridgeless(jsi::Runtime& runtime);
 
   bool enableAlignItemsBaselineOnFabricIOS(jsi::Runtime& runtime);
 
@@ -75,6 +79,8 @@ class NativeReactNativeFeatureFlags
 
   bool enableMicrotasks(jsi::Runtime& runtime);
 
+  bool enableNewBackgroundAndBorderDrawables(jsi::Runtime& runtime);
+
   bool enablePreciseSchedulingForPremountItemsOnAndroid(jsi::Runtime& runtime);
 
   bool enablePropsUpdateReconciliationAndroid(jsi::Runtime& runtime);
@@ -91,8 +97,6 @@ class NativeReactNativeFeatureFlags
 
   bool excludeYogaFromRawProps(jsi::Runtime& runtime);
 
-  bool fetchImagesInViewPreallocation(jsi::Runtime& runtime);
-
   bool fixMappingOfEventPrioritiesBetweenFabricAndReact(jsi::Runtime& runtime);
 
   bool fixMountingCoordinatorReportedPendingTransactionsOnAndroid(jsi::Runtime& runtime);
@@ -108,8 +112,6 @@ class NativeReactNativeFeatureFlags
   bool lazyAnimationCallbacks(jsi::Runtime& runtime);
 
   bool loadVectorDrawablesOnImages(jsi::Runtime& runtime);
-
-  bool removeNestedCallsToDispatchMountItemsOnAndroid(jsi::Runtime& runtime);
 
   bool setAndroidLayoutDirection(jsi::Runtime& runtime);
 

@@ -4,7 +4,7 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * @generated SignedSource<<14957b53f50e3ea943f0e3631475f336>>
+ * @generated SignedSource<<2797dcc4840b0f60670760231f51d459>>
  */
 
 /**
@@ -34,12 +34,12 @@ bool ReactNativeFeatureFlags::allowRecursiveCommitsWithSynchronousMountOnAndroid
   return getAccessor().allowRecursiveCommitsWithSynchronousMountOnAndroid();
 }
 
-bool ReactNativeFeatureFlags::batchRenderingUpdatesInEventLoop() {
-  return getAccessor().batchRenderingUpdatesInEventLoop();
-}
-
 bool ReactNativeFeatureFlags::completeReactInstanceCreationOnBgThreadOnAndroid() {
   return getAccessor().completeReactInstanceCreationOnBgThreadOnAndroid();
+}
+
+bool ReactNativeFeatureFlags::disableEventLoopOnBridgeless() {
+  return getAccessor().disableEventLoopOnBridgeless();
 }
 
 bool ReactNativeFeatureFlags::enableAlignItemsBaselineOnFabricIOS() {
@@ -102,8 +102,8 @@ bool ReactNativeFeatureFlags::enableLongTaskAPI() {
   return getAccessor().enableLongTaskAPI();
 }
 
-bool ReactNativeFeatureFlags::enableMicrotasks() {
-  return getAccessor().enableMicrotasks();
+bool ReactNativeFeatureFlags::enableNewBackgroundAndBorderDrawables() {
+  return getAccessor().enableNewBackgroundAndBorderDrawables();
 }
 
 bool ReactNativeFeatureFlags::enablePreciseSchedulingForPremountItemsOnAndroid() {
@@ -138,10 +138,6 @@ bool ReactNativeFeatureFlags::excludeYogaFromRawProps() {
   return getAccessor().excludeYogaFromRawProps();
 }
 
-bool ReactNativeFeatureFlags::fetchImagesInViewPreallocation() {
-  return getAccessor().fetchImagesInViewPreallocation();
-}
-
 bool ReactNativeFeatureFlags::fixMappingOfEventPrioritiesBetweenFabricAndReact() {
   return getAccessor().fixMappingOfEventPrioritiesBetweenFabricAndReact();
 }
@@ -174,10 +170,6 @@ bool ReactNativeFeatureFlags::loadVectorDrawablesOnImages() {
   return getAccessor().loadVectorDrawablesOnImages();
 }
 
-bool ReactNativeFeatureFlags::removeNestedCallsToDispatchMountItemsOnAndroid() {
-  return getAccessor().removeNestedCallsToDispatchMountItemsOnAndroid();
-}
-
 bool ReactNativeFeatureFlags::setAndroidLayoutDirection() {
   return getAccessor().setAndroidLayoutDirection();
 }
@@ -192,10 +184,6 @@ bool ReactNativeFeatureFlags::useFabricInterop() {
 
 bool ReactNativeFeatureFlags::useImmediateExecutorInAndroidBridgeless() {
   return getAccessor().useImmediateExecutorInAndroidBridgeless();
-}
-
-bool ReactNativeFeatureFlags::useModernRuntimeScheduler() {
-  return getAccessor().useModernRuntimeScheduler();
 }
 
 bool ReactNativeFeatureFlags::useNativeViewConfigsInBridgelessMode() {

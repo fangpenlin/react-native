@@ -4,7 +4,7 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * @generated SignedSource<<1ef57002084a2e38a69b43b7d4d557a9>>
+ * @generated SignedSource<<f9cc95d2f503b66dd39c89b641c96c79>>
  * @flow strict
  */
 
@@ -51,9 +51,11 @@ export type ReactNativeFeatureFlagsJsOnlyOverrides = OverridesFor<ReactNativeFea
 export type ReactNativeFeatureFlags = {
   ...ReactNativeFeatureFlagsJsOnly,
   commonTestFlag: Getter<boolean>,
+  commonTestFlagWithoutNativeImplementation: Getter<boolean>,
   allowRecursiveCommitsWithSynchronousMountOnAndroid: Getter<boolean>,
   batchRenderingUpdatesInEventLoop: Getter<boolean>,
   completeReactInstanceCreationOnBgThreadOnAndroid: Getter<boolean>,
+  disableEventLoopOnBridgeless: Getter<boolean>,
   enableAlignItemsBaselineOnFabricIOS: Getter<boolean>,
   enableAndroidLineHeightCentering: Getter<boolean>,
   enableBridgelessArchitecture: Getter<boolean>,
@@ -70,6 +72,7 @@ export type ReactNativeFeatureFlags = {
   enableLayoutAnimationsOnIOS: Getter<boolean>,
   enableLongTaskAPI: Getter<boolean>,
   enableMicrotasks: Getter<boolean>,
+  enableNewBackgroundAndBorderDrawables: Getter<boolean>,
   enablePreciseSchedulingForPremountItemsOnAndroid: Getter<boolean>,
   enablePropsUpdateReconciliationAndroid: Getter<boolean>,
   enableReportEventPaintTime: Getter<boolean>,
@@ -78,7 +81,6 @@ export type ReactNativeFeatureFlags = {
   enableUIConsistency: Getter<boolean>,
   enableViewRecycling: Getter<boolean>,
   excludeYogaFromRawProps: Getter<boolean>,
-  fetchImagesInViewPreallocation: Getter<boolean>,
   fixMappingOfEventPrioritiesBetweenFabricAndReact: Getter<boolean>,
   fixMountingCoordinatorReportedPendingTransactionsOnAndroid: Getter<boolean>,
   forceBatchingMountItemsOnAndroid: Getter<boolean>,
@@ -87,7 +89,6 @@ export type ReactNativeFeatureFlags = {
   initEagerTurboModulesOnNativeModulesQueueAndroid: Getter<boolean>,
   lazyAnimationCallbacks: Getter<boolean>,
   loadVectorDrawablesOnImages: Getter<boolean>,
-  removeNestedCallsToDispatchMountItemsOnAndroid: Getter<boolean>,
   setAndroidLayoutDirection: Getter<boolean>,
   traceTurboModulePromiseRejectionsOnAndroid: Getter<boolean>,
   useFabricInterop: Getter<boolean>,
@@ -191,6 +192,10 @@ export const useRefsForTextInputState: Getter<boolean> = createJavaScriptFlagGet
  */
 export const commonTestFlag: Getter<boolean> = createNativeFlagGetter('commonTestFlag', false);
 /**
+ * Common flag for testing (without native implementation). Do NOT modify.
+ */
+export const commonTestFlagWithoutNativeImplementation: Getter<boolean> = createNativeFlagGetter('commonTestFlagWithoutNativeImplementation', false);
+/**
  * Adds support for recursively processing commits that mount synchronously (Android only).
  */
 export const allowRecursiveCommitsWithSynchronousMountOnAndroid: Getter<boolean> = createNativeFlagGetter('allowRecursiveCommitsWithSynchronousMountOnAndroid', false);
@@ -202,6 +207,10 @@ export const batchRenderingUpdatesInEventLoop: Getter<boolean> = createNativeFla
  * Do not wait for a main-thread dispatch to complete init to start executing work on the JS thread on Android
  */
 export const completeReactInstanceCreationOnBgThreadOnAndroid: Getter<boolean> = createNativeFlagGetter('completeReactInstanceCreationOnBgThreadOnAndroid', false);
+/**
+ * The bridgeless architecture enables the event loop by default. This feature flag allows us to force disabling it in specific instances.
+ */
+export const disableEventLoopOnBridgeless: Getter<boolean> = createNativeFlagGetter('disableEventLoopOnBridgeless', false);
 /**
  * Kill-switch to turn off support for aling-items:baseline on Fabric iOS.
  */
@@ -267,6 +276,10 @@ export const enableLongTaskAPI: Getter<boolean> = createNativeFlagGetter('enable
  */
 export const enableMicrotasks: Getter<boolean> = createNativeFlagGetter('enableMicrotasks', false);
 /**
+ * Use BackgroundDrawable and BorderDrawable instead of CSSBackgroundDrawable
+ */
+export const enableNewBackgroundAndBorderDrawables: Getter<boolean> = createNativeFlagGetter('enableNewBackgroundAndBorderDrawables', false);
+/**
  * Moves execution of pre-mount items to outside the choregrapher in the main thread, so we can estimate idle time more precisely (Android only).
  */
 export const enablePreciseSchedulingForPremountItemsOnAndroid: Getter<boolean> = createNativeFlagGetter('enablePreciseSchedulingForPremountItemsOnAndroid', false);
@@ -299,10 +312,6 @@ export const enableViewRecycling: Getter<boolean> = createNativeFlagGetter('enab
  */
 export const excludeYogaFromRawProps: Getter<boolean> = createNativeFlagGetter('excludeYogaFromRawProps', false);
 /**
- * Start image fetching during view preallocation instead of waiting for layout pass
- */
-export const fetchImagesInViewPreallocation: Getter<boolean> = createNativeFlagGetter('fetchImagesInViewPreallocation', false);
-/**
  * Uses the default event priority instead of the discreet event priority by default when dispatching events from Fabric to React.
  */
 export const fixMappingOfEventPrioritiesBetweenFabricAndReact: Getter<boolean> = createNativeFlagGetter('fixMappingOfEventPrioritiesBetweenFabricAndReact', false);
@@ -334,10 +343,6 @@ export const lazyAnimationCallbacks: Getter<boolean> = createNativeFlagGetter('l
  * Adds support for loading vector drawable assets in the Image component (only on Android)
  */
 export const loadVectorDrawablesOnImages: Getter<boolean> = createNativeFlagGetter('loadVectorDrawablesOnImages', false);
-/**
- * Removes nested calls to MountItemDispatcher.dispatchMountItems on Android, so we do less work per frame on the UI thread.
- */
-export const removeNestedCallsToDispatchMountItemsOnAndroid: Getter<boolean> = createNativeFlagGetter('removeNestedCallsToDispatchMountItemsOnAndroid', false);
 /**
  * Propagate layout direction to Android views.
  */

@@ -4,7 +4,7 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * @generated SignedSource<<a88154d1c074b2fdab8704d2b209d204>>
+ * @generated SignedSource<<c624d0aed510abd12f9b808324dc2da8>>
  */
 
 /**
@@ -35,11 +35,11 @@ class ReactNativeFeatureFlagsDefaults : public ReactNativeFeatureFlagsProvider {
     return false;
   }
 
-  bool batchRenderingUpdatesInEventLoop() override {
+  bool completeReactInstanceCreationOnBgThreadOnAndroid() override {
     return false;
   }
 
-  bool completeReactInstanceCreationOnBgThreadOnAndroid() override {
+  bool disableEventLoopOnBridgeless() override {
     return false;
   }
 
@@ -103,7 +103,7 @@ class ReactNativeFeatureFlagsDefaults : public ReactNativeFeatureFlagsProvider {
     return false;
   }
 
-  bool enableMicrotasks() override {
+  bool enableNewBackgroundAndBorderDrawables() override {
     return false;
   }
 
@@ -139,10 +139,6 @@ class ReactNativeFeatureFlagsDefaults : public ReactNativeFeatureFlagsProvider {
     return false;
   }
 
-  bool fetchImagesInViewPreallocation() override {
-    return false;
-  }
-
   bool fixMappingOfEventPrioritiesBetweenFabricAndReact() override {
     return false;
   }
@@ -175,10 +171,6 @@ class ReactNativeFeatureFlagsDefaults : public ReactNativeFeatureFlagsProvider {
     return false;
   }
 
-  bool removeNestedCallsToDispatchMountItemsOnAndroid() override {
-    return false;
-  }
-
   bool setAndroidLayoutDirection() override {
     return true;
   }
@@ -192,10 +184,6 @@ class ReactNativeFeatureFlagsDefaults : public ReactNativeFeatureFlagsProvider {
   }
 
   bool useImmediateExecutorInAndroidBridgeless() override {
-    return false;
-  }
-
-  bool useModernRuntimeScheduler() override {
     return false;
   }
 

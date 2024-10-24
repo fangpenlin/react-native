@@ -4,7 +4,7 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * @generated SignedSource<<9e0db1a47596fec77c29122620b8f633>>
+ * @generated SignedSource<<1ce9496b005924d8a421899ce55f6d81>>
  */
 
 /**
@@ -27,9 +27,9 @@ public open class ReactNativeFeatureFlagsDefaults : ReactNativeFeatureFlagsProvi
 
   override fun allowRecursiveCommitsWithSynchronousMountOnAndroid(): Boolean = false
 
-  override fun batchRenderingUpdatesInEventLoop(): Boolean = false
-
   override fun completeReactInstanceCreationOnBgThreadOnAndroid(): Boolean = false
+
+  override fun disableEventLoopOnBridgeless(): Boolean = false
 
   override fun enableAlignItemsBaselineOnFabricIOS(): Boolean = true
 
@@ -61,7 +61,7 @@ public open class ReactNativeFeatureFlagsDefaults : ReactNativeFeatureFlagsProvi
 
   override fun enableLongTaskAPI(): Boolean = false
 
-  override fun enableMicrotasks(): Boolean = false
+  override fun enableNewBackgroundAndBorderDrawables(): Boolean = false
 
   override fun enablePreciseSchedulingForPremountItemsOnAndroid(): Boolean = false
 
@@ -79,8 +79,6 @@ public open class ReactNativeFeatureFlagsDefaults : ReactNativeFeatureFlagsProvi
 
   override fun excludeYogaFromRawProps(): Boolean = false
 
-  override fun fetchImagesInViewPreallocation(): Boolean = false
-
   override fun fixMappingOfEventPrioritiesBetweenFabricAndReact(): Boolean = false
 
   override fun fixMountingCoordinatorReportedPendingTransactionsOnAndroid(): Boolean = false
@@ -97,8 +95,6 @@ public open class ReactNativeFeatureFlagsDefaults : ReactNativeFeatureFlagsProvi
 
   override fun loadVectorDrawablesOnImages(): Boolean = false
 
-  override fun removeNestedCallsToDispatchMountItemsOnAndroid(): Boolean = false
-
   override fun setAndroidLayoutDirection(): Boolean = true
 
   override fun traceTurboModulePromiseRejectionsOnAndroid(): Boolean = false
@@ -106,8 +102,6 @@ public open class ReactNativeFeatureFlagsDefaults : ReactNativeFeatureFlagsProvi
   override fun useFabricInterop(): Boolean = false
 
   override fun useImmediateExecutorInAndroidBridgeless(): Boolean = false
-
-  override fun useModernRuntimeScheduler(): Boolean = false
 
   override fun useNativeViewConfigsInBridgelessMode(): Boolean = false
 

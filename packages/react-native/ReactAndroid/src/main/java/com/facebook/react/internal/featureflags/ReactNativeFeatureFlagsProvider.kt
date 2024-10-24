@@ -4,7 +4,7 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * @generated SignedSource<<193bb7803261004003d9009b44810c2c>>
+ * @generated SignedSource<<12dbd7afae2f6360d17df521ebc53d2f>>
  */
 
 /**
@@ -27,9 +27,9 @@ public interface ReactNativeFeatureFlagsProvider {
 
   @DoNotStrip public fun allowRecursiveCommitsWithSynchronousMountOnAndroid(): Boolean
 
-  @DoNotStrip public fun batchRenderingUpdatesInEventLoop(): Boolean
-
   @DoNotStrip public fun completeReactInstanceCreationOnBgThreadOnAndroid(): Boolean
+
+  @DoNotStrip public fun disableEventLoopOnBridgeless(): Boolean
 
   @DoNotStrip public fun enableAlignItemsBaselineOnFabricIOS(): Boolean
 
@@ -61,7 +61,7 @@ public interface ReactNativeFeatureFlagsProvider {
 
   @DoNotStrip public fun enableLongTaskAPI(): Boolean
 
-  @DoNotStrip public fun enableMicrotasks(): Boolean
+  @DoNotStrip public fun enableNewBackgroundAndBorderDrawables(): Boolean
 
   @DoNotStrip public fun enablePreciseSchedulingForPremountItemsOnAndroid(): Boolean
 
@@ -79,8 +79,6 @@ public interface ReactNativeFeatureFlagsProvider {
 
   @DoNotStrip public fun excludeYogaFromRawProps(): Boolean
 
-  @DoNotStrip public fun fetchImagesInViewPreallocation(): Boolean
-
   @DoNotStrip public fun fixMappingOfEventPrioritiesBetweenFabricAndReact(): Boolean
 
   @DoNotStrip public fun fixMountingCoordinatorReportedPendingTransactionsOnAndroid(): Boolean
@@ -97,8 +95,6 @@ public interface ReactNativeFeatureFlagsProvider {
 
   @DoNotStrip public fun loadVectorDrawablesOnImages(): Boolean
 
-  @DoNotStrip public fun removeNestedCallsToDispatchMountItemsOnAndroid(): Boolean
-
   @DoNotStrip public fun setAndroidLayoutDirection(): Boolean
 
   @DoNotStrip public fun traceTurboModulePromiseRejectionsOnAndroid(): Boolean
@@ -106,8 +102,6 @@ public interface ReactNativeFeatureFlagsProvider {
   @DoNotStrip public fun useFabricInterop(): Boolean
 
   @DoNotStrip public fun useImmediateExecutorInAndroidBridgeless(): Boolean
-
-  @DoNotStrip public fun useModernRuntimeScheduler(): Boolean
 
   @DoNotStrip public fun useNativeViewConfigsInBridgelessMode(): Boolean
 

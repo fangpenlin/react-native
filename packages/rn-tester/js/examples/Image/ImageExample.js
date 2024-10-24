@@ -13,12 +13,11 @@
 import type {ImageProps} from 'react-native/Libraries/Image/ImageProps';
 import type {LayoutEvent} from 'react-native/Libraries/Types/CoreEventTypes';
 
-import * as ReactNativeFeatureFlags from 'react-native/src/private/featureflags/ReactNativeFeatureFlags';
-
 import RNTesterText from '../../components/RNTesterText';
 import ImageCapInsetsExample from './ImageCapInsetsExample';
 import React from 'react';
 import {Image, ImageBackground, StyleSheet, Text, View} from 'react-native';
+import * as ReactNativeFeatureFlags from 'react-native/src/private/featureflags/ReactNativeFeatureFlags';
 
 const IMAGE1 =
   'https://www.facebook.com/assets/fb_lite_messaging/E2EE-settings@3x.png';
@@ -1651,10 +1650,17 @@ exports.examples = [
   },
   {
     title: 'Large image with different resize methods',
+    name: 'resize-method',
     description:
       'Demonstrating the effects of loading a large image with different resize methods',
+    scrollable: true,
     render: function (): React.Node {
-      const methods = ['auto', 'resize', 'scale', 'none'];
+      const methods: Array<ImageProps['resizeMethod']> = [
+        'auto',
+        'resize',
+        'scale',
+        'none',
+      ];
       // Four copies of the same image so we don't serve cached copies of the same image
       const images = [
         require('../../assets/large-image-1.png'),
@@ -1663,10 +1669,13 @@ exports.examples = [
         require('../../assets/large-image-4.png'),
       ];
       return (
-        <View>
+        <View testID="resize-method-example">
           {methods.map((method, index) => (
-            <View key={method} style={{display: 'flex', overflow: 'hidden'}}>
-              <RNTesterText>`{method}`</RNTesterText>
+            <View
+              key={method}
+              style={{display: 'flex', overflow: 'hidden'}}
+              testID={`resize-method-example-${method ?? ''}`}>
+              <RNTesterText>{method}</RNTesterText>
               <Image
                 resizeMethod={method}
                 source={images[index]}

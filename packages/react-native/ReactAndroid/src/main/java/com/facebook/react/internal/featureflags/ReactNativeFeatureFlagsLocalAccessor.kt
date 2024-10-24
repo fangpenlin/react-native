@@ -4,7 +4,7 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * @generated SignedSource<<91c4268e7e88e2e3c1f3d50d149c0d2b>>
+ * @generated SignedSource<<b6dd6a5d02c9070c3f35f70d5d1b7e35>>
  */
 
 /**
@@ -26,8 +26,8 @@ public class ReactNativeFeatureFlagsLocalAccessor : ReactNativeFeatureFlagsAcces
 
   private var commonTestFlagCache: Boolean? = null
   private var allowRecursiveCommitsWithSynchronousMountOnAndroidCache: Boolean? = null
-  private var batchRenderingUpdatesInEventLoopCache: Boolean? = null
   private var completeReactInstanceCreationOnBgThreadOnAndroidCache: Boolean? = null
+  private var disableEventLoopOnBridgelessCache: Boolean? = null
   private var enableAlignItemsBaselineOnFabricIOSCache: Boolean? = null
   private var enableAndroidLineHeightCenteringCache: Boolean? = null
   private var enableBridgelessArchitectureCache: Boolean? = null
@@ -43,7 +43,7 @@ public class ReactNativeFeatureFlagsLocalAccessor : ReactNativeFeatureFlagsAcces
   private var enableLayoutAnimationsOnAndroidCache: Boolean? = null
   private var enableLayoutAnimationsOnIOSCache: Boolean? = null
   private var enableLongTaskAPICache: Boolean? = null
-  private var enableMicrotasksCache: Boolean? = null
+  private var enableNewBackgroundAndBorderDrawablesCache: Boolean? = null
   private var enablePreciseSchedulingForPremountItemsOnAndroidCache: Boolean? = null
   private var enablePropsUpdateReconciliationAndroidCache: Boolean? = null
   private var enableReportEventPaintTimeCache: Boolean? = null
@@ -52,7 +52,6 @@ public class ReactNativeFeatureFlagsLocalAccessor : ReactNativeFeatureFlagsAcces
   private var enableUIConsistencyCache: Boolean? = null
   private var enableViewRecyclingCache: Boolean? = null
   private var excludeYogaFromRawPropsCache: Boolean? = null
-  private var fetchImagesInViewPreallocationCache: Boolean? = null
   private var fixMappingOfEventPrioritiesBetweenFabricAndReactCache: Boolean? = null
   private var fixMountingCoordinatorReportedPendingTransactionsOnAndroidCache: Boolean? = null
   private var forceBatchingMountItemsOnAndroidCache: Boolean? = null
@@ -61,12 +60,10 @@ public class ReactNativeFeatureFlagsLocalAccessor : ReactNativeFeatureFlagsAcces
   private var initEagerTurboModulesOnNativeModulesQueueAndroidCache: Boolean? = null
   private var lazyAnimationCallbacksCache: Boolean? = null
   private var loadVectorDrawablesOnImagesCache: Boolean? = null
-  private var removeNestedCallsToDispatchMountItemsOnAndroidCache: Boolean? = null
   private var setAndroidLayoutDirectionCache: Boolean? = null
   private var traceTurboModulePromiseRejectionsOnAndroidCache: Boolean? = null
   private var useFabricInteropCache: Boolean? = null
   private var useImmediateExecutorInAndroidBridgelessCache: Boolean? = null
-  private var useModernRuntimeSchedulerCache: Boolean? = null
   private var useNativeViewConfigsInBridgelessModeCache: Boolean? = null
   private var useOptimisedViewPreallocationOnAndroidCache: Boolean? = null
   private var useOptimizedEventBatchingOnAndroidCache: Boolean? = null
@@ -94,22 +91,22 @@ public class ReactNativeFeatureFlagsLocalAccessor : ReactNativeFeatureFlagsAcces
     return cached
   }
 
-  override fun batchRenderingUpdatesInEventLoop(): Boolean {
-    var cached = batchRenderingUpdatesInEventLoopCache
-    if (cached == null) {
-      cached = currentProvider.batchRenderingUpdatesInEventLoop()
-      accessedFeatureFlags.add("batchRenderingUpdatesInEventLoop")
-      batchRenderingUpdatesInEventLoopCache = cached
-    }
-    return cached
-  }
-
   override fun completeReactInstanceCreationOnBgThreadOnAndroid(): Boolean {
     var cached = completeReactInstanceCreationOnBgThreadOnAndroidCache
     if (cached == null) {
       cached = currentProvider.completeReactInstanceCreationOnBgThreadOnAndroid()
       accessedFeatureFlags.add("completeReactInstanceCreationOnBgThreadOnAndroid")
       completeReactInstanceCreationOnBgThreadOnAndroidCache = cached
+    }
+    return cached
+  }
+
+  override fun disableEventLoopOnBridgeless(): Boolean {
+    var cached = disableEventLoopOnBridgelessCache
+    if (cached == null) {
+      cached = currentProvider.disableEventLoopOnBridgeless()
+      accessedFeatureFlags.add("disableEventLoopOnBridgeless")
+      disableEventLoopOnBridgelessCache = cached
     }
     return cached
   }
@@ -264,12 +261,12 @@ public class ReactNativeFeatureFlagsLocalAccessor : ReactNativeFeatureFlagsAcces
     return cached
   }
 
-  override fun enableMicrotasks(): Boolean {
-    var cached = enableMicrotasksCache
+  override fun enableNewBackgroundAndBorderDrawables(): Boolean {
+    var cached = enableNewBackgroundAndBorderDrawablesCache
     if (cached == null) {
-      cached = currentProvider.enableMicrotasks()
-      accessedFeatureFlags.add("enableMicrotasks")
-      enableMicrotasksCache = cached
+      cached = currentProvider.enableNewBackgroundAndBorderDrawables()
+      accessedFeatureFlags.add("enableNewBackgroundAndBorderDrawables")
+      enableNewBackgroundAndBorderDrawablesCache = cached
     }
     return cached
   }
@@ -354,16 +351,6 @@ public class ReactNativeFeatureFlagsLocalAccessor : ReactNativeFeatureFlagsAcces
     return cached
   }
 
-  override fun fetchImagesInViewPreallocation(): Boolean {
-    var cached = fetchImagesInViewPreallocationCache
-    if (cached == null) {
-      cached = currentProvider.fetchImagesInViewPreallocation()
-      accessedFeatureFlags.add("fetchImagesInViewPreallocation")
-      fetchImagesInViewPreallocationCache = cached
-    }
-    return cached
-  }
-
   override fun fixMappingOfEventPrioritiesBetweenFabricAndReact(): Boolean {
     var cached = fixMappingOfEventPrioritiesBetweenFabricAndReactCache
     if (cached == null) {
@@ -444,16 +431,6 @@ public class ReactNativeFeatureFlagsLocalAccessor : ReactNativeFeatureFlagsAcces
     return cached
   }
 
-  override fun removeNestedCallsToDispatchMountItemsOnAndroid(): Boolean {
-    var cached = removeNestedCallsToDispatchMountItemsOnAndroidCache
-    if (cached == null) {
-      cached = currentProvider.removeNestedCallsToDispatchMountItemsOnAndroid()
-      accessedFeatureFlags.add("removeNestedCallsToDispatchMountItemsOnAndroid")
-      removeNestedCallsToDispatchMountItemsOnAndroidCache = cached
-    }
-    return cached
-  }
-
   override fun setAndroidLayoutDirection(): Boolean {
     var cached = setAndroidLayoutDirectionCache
     if (cached == null) {
@@ -490,16 +467,6 @@ public class ReactNativeFeatureFlagsLocalAccessor : ReactNativeFeatureFlagsAcces
       cached = currentProvider.useImmediateExecutorInAndroidBridgeless()
       accessedFeatureFlags.add("useImmediateExecutorInAndroidBridgeless")
       useImmediateExecutorInAndroidBridgelessCache = cached
-    }
-    return cached
-  }
-
-  override fun useModernRuntimeScheduler(): Boolean {
-    var cached = useModernRuntimeSchedulerCache
-    if (cached == null) {
-      cached = currentProvider.useModernRuntimeScheduler()
-      accessedFeatureFlags.add("useModernRuntimeScheduler")
-      useModernRuntimeSchedulerCache = cached
     }
     return cached
   }
